@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    # Bind to localhost only — the public internet reaches the app through Nginx,
+    # never the container directly. Good security habit to mention in interviews.
+    ports:
+      - "127.0.0.1:8000:8000"
